@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>MailBox Editor</title>
+    <title>React MailBox Editor</title>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/trumbowyg/dist/trumbowyg.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
@@ -77,7 +77,18 @@
             <div className="panel-body">
               <Editor />
             </div>
-            <div className="panel-footer">Panel footer</div>
+            <div className="panel-footer">
+              <div className="btn-toolbar pull-right" role="toolbar">
+                <div className="btn-group" role="group">
+                  <button type="button" className="btn btn-danger">CANCEL</button>
+                  <button type="button" className="btn btn-success">SAVE</button>
+                </div>
+                <div className="btn-group" role="group">
+                  <button type="button" className="btn btn-primary outline">SEND</button>
+                </div>
+              </div>
+              <div className="clearfix" />
+            </div>
           </div>
         );
       }

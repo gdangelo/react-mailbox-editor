@@ -1,15 +1,22 @@
+body{
+    background-color: #e9f0f5;
+}
+
 .container{
     margin-top: 10px;
+    border: 0;
 }
 
 .panel .panel-heading{
   background-color: white;
+  padding: 20px;
 }
 .panel .panel-body{
     padding: 0;
 }
 .panel .panel-footer{
   background-color: white;
+  padding: 20px;
 }
 
 .trumbowyg{
@@ -30,4 +37,54 @@
 }
 label{
   color: #89949B;
+}
+
+.btn{
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 4px 16px;
+}
+.btn-primary{
+  color: #ccc;
+  background-color: #fff;
+}
+.btn-primary.outline{
+  color: #79B0EC;
+  border-color: #79B0EC;
+}
+.btn-primary:hover,
+.btn-primary:focus{
+  color: #fff;
+  background-color: #79B0EC;
+  border-color: #79B0EC;
+}
+
+.btn-danger{
+  color: #ccc;
+  background-color: #fff;
+}
+.btn-danger.outline{
+  color: #d9534f;
+  border-color: #d9534f;
+}
+.btn-danger:hover,
+.btn-danger:focus{
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+
+.btn-success{
+  color: #ccc;
+  background-color: #fff;
+}
+.btn-success.outline{
+  color: #55C9A6;
+  border-color: #55C9A6;
+}
+.btn-success:hover,
+.btn-success:focus{
+  color: #fff;
+  background-color: #55C9A6;
+  border-color: #55C9A6;
 }
