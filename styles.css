@@ -1,0 +1,22 @@
+.container{
+    margin-top: 10px;
+}
+
+.panel .panel-heading{
+  background-color: white;
+}
+.panel .panel-body{
+    padding: 0;
+}
+.panel .panel-footer{
+  background-color: white;
+}
+
+.trumbowyg{
+  border: none;
+  margin: 0;
+  width: 100%;
+}
+.trumbowyg-button-pane{
+  background-color: white;
+}
