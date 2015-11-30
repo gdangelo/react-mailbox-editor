@@ -17,6 +17,39 @@
   </body>
 
   <script type="text/babel">
+    var InboxForm = React.createClass({
+      render: function () {
+        return (
+          <form className="form-horizontal">
+            <div className="form-group">
+              <label htmlFor="email-to" className="col-sm-1 control-label">To</label>
+              <div className="col-sm-11">
+                <input type="email" className="form-control" id="email-to" placeholder="Ex: hello@example.com" />
+              </div>
+            </div>
+            <div className="form-group">
+              <label htmlFor="email-cc" className="col-sm-1 control-label">CC</label>
+              <div className="col-sm-11">
+                <input type="email" className="form-control" id="email-cc" />
+              </div>
+            </div>
+            <div className="form-group">
+              <label htmlFor="email-bcc" className="col-sm-1 control-label">BCC</label>
+              <div className="col-sm-11">
+                <input type="email" className="form-control" id="email-bcc" />
+              </div>
+            </div>
+            <div className="form-group">
+              <label htmlFor="email-subject" className="col-sm-1 control-label">Subject</label>
+              <div className="col-sm-11">
+                <input type="email" className="form-control" id="email-subject" />
+              </div>
+            </div>
+          </form>
+        );
+      }
+    });
+
     var Editor = React.createClass({
       componentDidMount: function () {
         $('#editor').trumbowyg({
@@ -36,7 +69,9 @@
           <div className="panel panel-default">
             <div className="panel-heading">
               <div className="row">
-                <div className="col-xs-12">Panel heading</div>
+                <div className="col-xs-12">
+                  <InboxForm />
+                </div>
               </div>
             </div>
             <div className="panel-body">

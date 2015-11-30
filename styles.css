@@ -20,3 +20,14 @@
 .trumbowyg-button-pane{
   background-color: white;
 }
+
+.form-horizontal{
+  padding-left: 60px;
+}
+.form-control{
+  border: 2px solid #ccc;
+  border-radius: 0;
+}
+label{
+  color: #89949B;
+}
