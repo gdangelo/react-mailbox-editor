@@ -3,10 +3,12 @@ body{
 }
 
 .container{
-    margin-top: 10px;
-    border: 0;
+  margin-top: 10px;
 }
 
+.panel{
+  border: none;
+}
 .panel .panel-heading{
   background-color: white;
   padding: 20px;
@@ -26,6 +28,18 @@ body{
 }
 .trumbowyg-button-pane{
   background-color: white;
+}
+
+img{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+.inbox-avatar-name{
+  text-align: left;
+  padding-left: 12.5px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .form-horizontal{
