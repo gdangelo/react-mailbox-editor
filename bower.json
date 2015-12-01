@@ -17,7 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "trumbowyg": "~1.1.7",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "trumbowyg": "2.0.0-beta.7"
   }
 }
