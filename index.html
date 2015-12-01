@@ -5,6 +5,7 @@
     <title>React MailBox Editor</title>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/trumbowyg/dist/trumbowyg.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.25/browser.min.js"></script>
@@ -17,6 +18,34 @@
   </body>
 
   <script type="text/babel">
+    var Modal = React.createClass({
+        render: function () {
+          return (
+            <div className="modal fade" tabIndex="-1" role="dialog">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <button type="button" className="close" data-dismiss="modal" ><span>&times;</span></button>
+                    <h4 className="modal-title">{this.props.title}</h4>
+                  </div>
+                  <div className="modal-body">
+                    {this.props.body}
+                  </div>
+                  <div className="modal-footer">
+                    <div className="btn-toolbar pull-right" role="toolbar">
+                      <div className="btn-group" role="group">
+                        <button type="button" className="btn btn-danger outline" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                    <div className="clearfix" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          );s
+        }
+    });
+
     var Editor = React.createClass({
       componentDidMount: function () {
         var that = this;
@@ -121,6 +150,9 @@
                 <div className="btn-group" role="group">
                   <button type="button" onClick={this.handleSendClick} className="btn btn-primary outline">SEND</button>
                 </div>
+                <Modal ref="modal"
+                       title="Email"
+                       body={this.state.emailBody} />
               </div>
               <div className="clearfix" />
             </div>
@@ -152,10 +184,10 @@
         });
       },
       handleSaveClick: function () {
-        console.log(this.state);
+        $(ReactDOM.findDOMNode(this.refs.modal)).modal();
       },
       handleSendClick: function () {
-        console.log(this.state);
+        $(ReactDOM.findDOMNode(this.refs.modal)).modal();
       }
     });
 
