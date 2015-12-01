@@ -41,6 +41,11 @@ img{
   display: inline-block;
   vertical-align: middle;
 }
+.center{
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
 
 .form-horizontal{
   padding-left: 60px;
