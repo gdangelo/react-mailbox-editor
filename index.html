@@ -57,7 +57,7 @@
         });
       },
       render: function () {
-        return <div id="editor" placeholder="Enter your email here..."></div>;
+        return <div id="editor" placeholder="Enter your message here..."></div>;
       }
     });
 
@@ -150,9 +150,8 @@
                 <div className="btn-group" role="group">
                   <button type="button" onClick={this.handleSendClick} className="btn btn-primary outline">SEND</button>
                 </div>
-                <Modal ref="modal"
-                       title="Email"
-                       body={this.state.emailBody} />
+                <Modal ref="modalSend" title="Email sent!" body="Your email has been successfully sent!" />
+                <Modal ref="modalSave" title="Email saved!" body="Your email has been successfully saved!" />
               </div>
               <div className="clearfix" />
             </div>
@@ -161,6 +160,7 @@
       },
       handleEditorChange: function (emailBody) {
         this.setState({ "emailBody": emailBody });
+        console.log(emailBody);
       },
       handleEmailToChange: function (e) {
         this.setState({ "emailTo": e.target.value });
@@ -184,10 +184,10 @@
         });
       },
       handleSaveClick: function () {
-        $(ReactDOM.findDOMNode(this.refs.modal)).modal();
+        $(ReactDOM.findDOMNode(this.refs.modalSave)).modal();
       },
       handleSendClick: function () {
-        $(ReactDOM.findDOMNode(this.refs.modal)).modal();
+        $(ReactDOM.findDOMNode(this.refs.modalSend)).modal();
       }
     });
 
