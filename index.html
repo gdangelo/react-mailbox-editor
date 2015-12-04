@@ -92,13 +92,13 @@
                 <div className="col-xs-8 center">
                   <div className="inbox-title">
                     <span className="glyphicon glyphicon-envelope center"></span>
-                    <h2 className="center">React MailBox Editor</h2>
+                    <h2 className="center">{this.props.title}</h2>
                   </div>
                 </div>
                 <div className="col-xs-4 center">
                   <div className="inbox-avatar text-right">
-                    <img src="http://gdangelo.fr/images/avatar.jpg" />
-                    <div className="inbox-avatar-name"><a href="https://gdangelo.fr">Grégory DAngelo</a></div>
+                    <img src={this.props.urlImage} />
+                    <div className="inbox-avatar-name"><a href={this.props.link}>{this.props.username}</a></div>
                   </div>
                 </div>
               </div>
@@ -204,7 +204,12 @@
       }
     });
 
-    var options = {};
+    var options = {
+      username: "Grégory D'Angelo",
+      link: "https://gdangelo.fr",
+      urlImage: "https://gdangelo.fr/images/avatar.jpg",
+      title: "React Mailbox Editor"
+    };
 
     var element = React.createElement(Mailbox, options);
     ReactDOM.render(element, document.querySelector('.container'));
