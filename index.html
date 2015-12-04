@@ -47,6 +47,17 @@
     });
 
     var Editor = React.createClass({
+      getDefaultProps: function () {
+        return {
+          body: "",
+          placeholder: "Enter your message here..."
+        };
+      },
+      componentWillReceiveProps: function (nextProps) {
+        if (nextProps.body == ""){
+          $('#editor').trumbowyg('empty');
+        }
+      },
       componentDidMount: function () {
         var that = this;
         $('#editor').trumbowyg({
@@ -55,9 +66,11 @@
         .on('tbwchange', function (){
           that.props.onChange($('#editor').trumbowyg('html'));
         });
+
+        $('#editor').trumbowyg('html', this.props.body);
       },
       render: function () {
-        return <div id="editor" placeholder="Enter your message here..."></div>;
+        return <div id="editor" placeholder={this.props.placeholder} ></div>;
       }
     });
 
@@ -139,7 +152,8 @@
               </div>
             </div>
             <div className="panel-body">
-              <Editor onChange={this.handleEditorChange}/>
+              <Editor onChange={this.handleEditorChange}
+                      body={this.state.emailBody} />
             </div>
             <div className="panel-footer">
               <div className="btn-toolbar pull-right" role="toolbar">
@@ -160,7 +174,6 @@
       },
       handleEditorChange: function (emailBody) {
         this.setState({ "emailBody": emailBody });
-        console.log(emailBody);
       },
       handleEmailToChange: function (e) {
         this.setState({ "emailTo": e.target.value });
